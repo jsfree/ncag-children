@@ -18,8 +18,8 @@ export class CrudService {
     this.studentsRef.push({
       firstName: student.firstName,
       lastName: student.lastName,
-      email: student.email,
-      mobileNumber: student.mobileNumber
+      // email: student.email,
+      guardianCell: student.guardianCell
     })
   }
 
@@ -40,8 +40,8 @@ export class CrudService {
     this.studentRef.update({
       firstName: student.firstName,
       lastName: student.lastName,
-      email: student.email,
-      mobileNumber: student.mobileNumber
+      // email: student.email,
+      guardianCell: student.guardianCell
     })
   }  
 

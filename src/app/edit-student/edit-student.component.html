@@ -29,18 +29,12 @@
             </div>
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label>Email</label>
-                <input type="email" formControlName="email" class="form-control" required>
-                <p *ngIf="email.touched && email.invalid" class="error"><sup>*</sup>Please provide email</p>
-                <p *ngIf="email.errors?.pattern" class="error"><sup>*</sup>Please enter correct email</p>
-              </div>
-              <div class="col-md-12 mb-3">
-                <label>Mobile number</label>
-                <input type="text" formControlName="mobileNumber" class="form-control" required>
-                <p *ngIf="mobileNumber.touched && mobileNumber.invalid" class="error"><sup>*</sup>Please provide
+                <label>Guardian Mobile Number</label>
+                <input type="text" formControlName="guardianCell" class="form-control" required>
+                <p *ngIf="guardianCell.touched && guardianCell.invalid" class="error"><sup>*</sup>Please provide
                   contact
                   number</p>
-                <p *ngIf="mobileNumber.errors?.pattern" class="error"><sup>*</sup>Use numbers only
+                <p *ngIf="guardianCell.errors?.pattern" class="error"><sup>*</sup>Use numbers only
                   number</p>
               </div>
             </div>

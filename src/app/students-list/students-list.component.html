@@ -31,8 +31,8 @@
         <tr>
           <th scope="col">Student Id</th>
           <th scope="col">Student name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Mobile number</th>
+          <!-- <th scope="col">Email</th> -->
+          <th scope="col">Guardian Mobile number</th>
           <th class="text-center" scope="col">Edit</th>
         </tr>
       </thead>
@@ -42,8 +42,8 @@
         <tr *ngFor="let student of Student | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
           <th scope="row">{{student.$key}}</th>
           <td>{{student.firstName}} {{student.lastName}}</td>
-          <td>{{student.email}}</td>
-          <td>{{student.mobileNumber}}</td>
+          <!-- <td>{{student.email}}</td> -->
+          <td>{{student.guardianCell}}</td>
           <td class="text-center action-block">
             <i class="far fa-edit" routerLink="/edit-student/{{student.$key}}"></i>
             <i class="far fa-trash-alt" (click)="deleteStudent(student)"></i></td>
