@@ -30,6 +30,9 @@ export class AddStudentComponent implements OnInit {
     this.studentForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: [''],
+      ageGroup: [''],
+      guardian1Name: ['', [Validators.required, Validators.minLength(2)]],
+      guardian2Name: [''],
       guardianCell: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
     })  
   }
@@ -42,6 +45,18 @@ export class AddStudentComponent implements OnInit {
   get lastName() {
     return this.studentForm.get('lastName');
   }  
+
+  get ageGroup(){
+    return this.studentForm.get('ageGroup');
+  }
+
+  get guardian1Name(){
+    return this.studentForm.get('guardian1Name');
+  }
+
+  get guardian2Name(){
+    return this.studentForm.get('guardian2Name');
+  }
 
   get guardianCell() {
     return this.studentForm.get('guardianCell');

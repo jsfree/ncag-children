@@ -1,7 +1,6 @@
 <div class="pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Add Student</h1>
-  <p class="custom-text">A demo CRUD app for <strong>student record management system</strong> built with <strong>Angular7
-      and Firebase5</strong></p>
+  <h1 class="h2">Add Child</h1>
+  <p class="custom-text">Enter new child information.</p>
 </div>
 
 <!-- Student form -->
@@ -22,7 +21,42 @@
           <label>Last name</label>
           <input type="text" formControlName="lastName" class="form-control">
         </div>
+        <div class="col-md-12 mb-3">
+          <label>Age Group</label>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" value="Nursery" formControlName="ageGroup">
+                  Nursery
+                </label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" value="Children's Church" formControlName="ageGroup">
+                    Children's Church
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" value="Youth" formControlName="ageGroup">
+                    Youth
+                  </label>
+                </div>
+              </div>
+            </div>
+        </div>
 
+        <div class="col-md-12 mb-3">
+          <label>Guardian Name (1)</label>
+          <input type="text" formControlName="guardian1Name" class="form-control" required>
+          <!-- Showing errors using getter method -->
+          <p *ngIf="guardian1Name.touched && guardian1Name.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
+          <p *ngIf="guardian1Name.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 characters</p>
+        </div>
+
+        <div class="col-md-12 mb-3">
+          <label>Guardian Name (2)</label>
+          <input type="text" formControlName="guardian2Name" class="form-control">
+        </div>
     
         <div class="col-md-12 mb-3">
           <label>Guardian Mobile Number</label>
@@ -38,7 +72,7 @@
 
       <div class="form-group text-right">
         <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
-        <button type="submit" class="btn btn-success" [disabled]="!studentForm.valid">Add Student</button>
+        <button type="submit" class="btn btn-success" [disabled]="!studentForm.valid">Add Child</button>
       </div>
 
     </div>

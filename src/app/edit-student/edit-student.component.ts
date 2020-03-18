@@ -40,20 +40,30 @@ export class EditStudentComponent implements OnInit {
     return this.editForm.get('lastName');
   }
 
-  // get email() {
-  //   return this.editForm.get('email');
-  // }
+  get ageGroup(){
+    return this.editForm.get('ageGroup');
+  }
+
+  get guardian1Name(){
+    return this.editForm.get('guardian1Name');
+  }
+
+  get guardian2Name(){
+    return this.editForm.get('guardian2Name');
+  }
 
   get guardianCell() {
     return this.editForm.get('guardianCell');
-  }  
+  } 
 
   // Contains Reactive Form logic
   updateStudentData() {
     this.editForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: [''],
-     // email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
+      ageGroup: [''],
+      guardian1Name: ['', [Validators.required, Validators.minLength(2)]],
+      guardian2Name: [''],
       guardianCell: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
     })
   }
