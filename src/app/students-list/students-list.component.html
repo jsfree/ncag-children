@@ -50,6 +50,7 @@
           <td>{{student.guardianCell}}</td>
           <td class="text-center action-block">
             <i class="far fa-edit" routerLink="/edit-student/{{student.$key}}"></i>
+            <i class="fas fa-mobile-alt" (click)="textGuardian(student)"></i>
             <i class="far fa-trash-alt" (click)="deleteStudent(student)"></i></td>
         </tr>
       </tbody>

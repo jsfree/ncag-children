@@ -9,7 +9,7 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angula
 export class CrudService {
   studentsRef: AngularFireList<any>;    // Reference to Student data list, its an Observable
   studentRef: AngularFireObject<any>;   // Reference to Student object, its an Observable too
-  
+
   // Inject AngularFireDatabase Dependency in Constructor
   constructor(private db: AngularFireDatabase) { }
 
@@ -42,7 +42,9 @@ export class CrudService {
     this.studentRef.update({
       firstName: student.firstName,
       lastName: student.lastName,
-      // email: student.email,
+      ageGroup: student.ageGroup,
+      guardian1Name: student.guardian1Name,
+      guardian2Name: student.guardian2Name,
       guardianCell: student.guardianCell
     })
   }  

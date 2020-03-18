@@ -33,7 +33,7 @@ export class AddStudentComponent implements OnInit {
       ageGroup: [''],
       guardian1Name: ['', [Validators.required, Validators.minLength(2)]],
       guardian2Name: [''],
-      guardianCell: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+      guardianCell: ['', [Validators.required, Validators.pattern('^[0-9]+')]]
     })  
   }
 
