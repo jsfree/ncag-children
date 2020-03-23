@@ -46,7 +46,7 @@ import { AppComponent } from './app.component';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,      
     }),
-    NgxPaginationModule  // NGX pagination module
+    NgxPaginationModule
     
   ],
   providers: [],

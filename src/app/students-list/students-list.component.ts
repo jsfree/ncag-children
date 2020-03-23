@@ -2,8 +2,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CrudService } from '../shared/crud.service';  // CRUD API service class
 import { Student } from './../shared/student';   // Student interface class for Data types.
 import { ToastrService } from 'ngx-toastr';      // Alert message using NGX toastr
-import * as Twilio from 'twilio';
 
+declare const sendText: any;
 
 @Component({
   selector: 'app-students-list',
@@ -17,7 +17,6 @@ export class StudentsListComponent implements OnInit {
   hideWhenNoStudent: boolean = false; // Hide students data table when no student.
   noData: boolean = false;            // Showing No Student Message, when no student in database.
   preLoader: boolean = true;          // Showing Preloader to show user data is coming for you from thre server(A tiny UX Shit)
-  
 
   constructor(
     public crudApi: CrudService, // Inject student CRUD services in constructor.
@@ -60,15 +59,10 @@ export class StudentsListComponent implements OnInit {
     }
   }
 
-   textGuardian(student){    
-     /* var twilio = require('twilio');
-     var client = new twilio('ACec1f8876ec9e326f6fa06feaadea3eeb','8deebb986b40e246de7feb1f03900085');
-     
-     client.messages.create({
-       to: '+1'+student.guardianCell,
-       from: '',
-       body: 'come get yo kid!'
-     }); */
-   console.log(student.guardianCell);
+   textGuardian(student){
+     sendText(student); 
+   console.log('+1'+student.guardianCell);
   }
 }
+
+
