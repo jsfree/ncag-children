@@ -28,9 +28,7 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": [
-              "src/app/students-list/bundle.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

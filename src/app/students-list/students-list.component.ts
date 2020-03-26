@@ -16,7 +16,7 @@ export class StudentsListComponent implements OnInit {
   Student: Student[];                 // Save students data in Student's array.
   hideWhenNoStudent: boolean = false; // Hide students data table when no student.
   noData: boolean = false;            // Showing No Student Message, when no student in database.
-  preLoader: boolean = true;          // Showing Preloader to show user data is coming for you from thre server(A tiny UX Shit)
+  preLoader: boolean = true;          // Showing Preloader to show user data is coming for you from thre server(A tiny UX)
 
   constructor(
     public crudApi: CrudService, // Inject student CRUD services in constructor.
@@ -60,8 +60,8 @@ export class StudentsListComponent implements OnInit {
   }
 
    textGuardian(student){
-     sendText(student); 
-   console.log('+1'+student.guardianCell);
+     new sendText(student); 
+   //console.log('+1'+student.guardianCell);
   }
 }
 
